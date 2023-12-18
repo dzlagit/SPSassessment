@@ -13,9 +13,9 @@ def get_random_greeting(user_language):
     else:
         raise ValueError("Language not found in the greetings dictionary.")
 
-try:
+try: # try and except block to catch errors 
     while True:
-        try:
+        try: 
             user_language = input("Enter the language for your greeting: ")
             greeting = get_random_greeting(user_language)
             print(greeting)
@@ -39,11 +39,11 @@ try:
                 else:
                     print("I'm sorry, I don't understand that command.")
 
-        except ValueError as ve:
-            print(f"Error: {ve}")
-        except KeyError:
-            print("Unexpected input. Please try again.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-except KeyboardInterrupt:
-    print("\nExiting the program. Goodbye!")
+        except ValueError as ve: # catching the error if the value is not found in the dictionary
+            print(f"Error: {ve}") # printing the error and exiting the program
+        except KeyError: # catching the error if the key is not found in the dictionary
+            print("Unexpected input. Please try again.") # printing the error and exiting the program
+        except Exception as e: # catching the error if the key is not found
+            print(f"An unexpected error occurred: {e}") # printing the error and exiting the program
+except KeyboardInterrupt: # catching the error if the user presses ctrl + c
+    print("\nExiting the program. Goodbye!") # printing the error and exiting the program
